@@ -1,38 +1,40 @@
 # ELK  
-https://sematext.com/guides/elk-stack/
-https://sysadminxpert.com/steps-to-install-and-configure-filebeat-on-linux/
-https://www.javainuse.com/elasticsearch/filebeat-elk
-https://www.elastic.co/guide/en/elasticsearch/reference/master/ingest.html
-https://discuss.elastic.co/t/network-host-0-0-0-0-is-not-working-in-elasticsearch-7-3-0/195697
-https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elastic-stack-on-ubuntu-20-04
-https://www.youtube.com/watch?v=MRMgd6E9AXE
-https://phoenixnap.com/kb/how-to-install-elk-stack-on-ubuntu
-https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elastic-stack-on-ubuntu-20-04
-https://www.elastic.co/guide/en/logstash/current/installing-logstash.html
-https://www.elastic.co/guide/en/logstash/current/use-ingest-pipelines.html
-https://meet.google.com/linkredirect?authuser=0&dest=https%3A%2F%2Fwww.elastic.co%2Fguide%2Fen%2Flogstash%2Fcurrent%2Flogstash-config-for-filebeat-modules.html%23parsing-nginx
+https://sematext.com/guides/elk-stack/  
+https://sysadminxpert.com/steps-to-install-and-configure-filebeat-on-linux/  
+https://www.javainuse.com/elasticsearch/filebeat-elk  
+https://www.elastic.co/guide/en/elasticsearch/reference/master/ingest.html  
+https://discuss.elastic.co/t/network-host-0-0-0-0-is-not-working-in-elasticsearch-7-3-0/195697  
+https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elastic-stack-on-ubuntu-20-04  
+https://www.youtube.com/watch?v=MRMgd6E9AXE  
+https://phoenixnap.com/kb/how-to-install-elk-stack-on-ubuntu  
+https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elastic-stack-on-ubuntu-20-04    
+https://www.elastic.co/guide/en/logstash/current/installing-logstash.html  
+https://www.elastic.co/guide/en/logstash/current/use-ingest-pipelines.html  
+https://meet.google.com/linkredirect?authuser=0&dest=https%3A%2F%2Fwww.elastic.co%2Fguide%2Fen%2Flogstash%2Fcurrent%2Flogstash-config-for-filebeat-modules.html%23parsing-nginx  
 
-input {
-beats {
-  port => "5044"
-  ssl  => false
- # host => "10.0.0.91"
-}
-}
-output {
-elasticsearch {
-  hosts => ["10.0.0.75:9200"]
-  manage_template => false
-  index => "%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}"
-}
-}
+cd /etc/logstash/conf.d/logstash.conf  
+
+input {  
+beats {  
+  port => "5044"  
+  ssl  => false  
+ # host => "10.0.0.91"  
+}  
+}  
+output {  
+elasticsearch {  
+  hosts => ["10.0.0.75:9200"]  
+  manage_template => false  
+  index => "%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}"  
+}  
+}  
 
 
-https://discuss.elastic.co/t/not-able-to-see-filebeat-index-pattern-in-kibana/127072
+https://discuss.elastic.co/t/not-able-to-see-filebeat-index-pattern-in-kibana/127072  
 
-https://stackoverflow.com/questions/58742845/multiple-filebeat-to-one-logstash-how-to-optimize-the-configuration
+https://stackoverflow.com/questions/58742845/multiple-filebeat-to-one-logstash-how-to-optimize-the-configuration  
 
-https://discuss.elastic.co/t/multiple-filebeat-inputs-with-logstash-output/146343
+https://discuss.elastic.co/t/multiple-filebeat-inputs-with-logstash-output/146343  
 
 https://docs.axway.com/bundle/EmbeddedAnalyticsAPIM_allOS_en_HTML5/page/install_and_configure_filebeat.html
 
