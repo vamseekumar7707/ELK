@@ -18,7 +18,7 @@ input {
 beats {  
   port => "5044"  
   ssl  => false  
- # host => "10.0.0.91"  
+ #host => "10.0.0.91"  
 }  
 }  
 output {  
